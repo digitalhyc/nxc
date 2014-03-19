@@ -4,48 +4,53 @@ package template;
  * Created by andrew on 14-3-17.
  */
 public class BasicForm {
-    private int id;
-    private String name;
-    private int grade;
+    private String[] columnName;
+    private int column;
+    private int length;
 
     /** 构造函数：初始化链表 */
-    public BasicForm()
+    public BasicForm(int userColumn,
+                     String[] userColumnName)
+    {
+        column = userColumn;
+        columnInit(column, userColumnName);
+
+        length = 0;
+
+
+    }
+
+    /** 初始化列名 */
+    private void columnInit(int column,
+                            String[] userColumnName)
+    {
+        int ctrlColumnInit;
+
+        columnName = new String[column];
+        columnName[0] = "id";
+        ctrlColumnInit = 1;
+
+        for (String eachName : userColumnName)
+        {
+            columnName[ctrlColumnInit] = eachName;
+            ++ctrlColumnInit;
+        }
+    }
+
+    /**
+     * 向表中插入一行
+     * 内容为 String[] contentToAdd 中的每一个元素
+     */
+
+    public void add(String[] contentToAdd)
     {
 
     }
 
-    /** 增加一个新的项目到列表 */
-    public void add(String nameToAdd,
-                    int gradeToAdd)
-    {
-
-    }
-
-    /** 从列表中删除一个项目 */
-    public void delete(int idToDel)
-    {
-
-    }
-
-    /** 根据id更新对应项的姓名 */
-    public void update(int idToUpdate,
-                       String nameToUpdate)
-    {
-
-    }
-
-    /** 根据id更新对应项的成绩 */
-    public void update(int idToUpdate,
-                       int gradeToUpdate)
-    {
-
-    }
-
-    /** 根据id更新对应项的姓名和成绩 */
-    public void update(int idToUpdate,
-                       String nameToUpdate,
-                       int gradeToUpdate)
+    /** 移除表中的某一行 */
+    public void remove(int idToRemove)
     {
 
     }
 }
+
