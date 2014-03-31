@@ -1,4 +1,4 @@
-package templates;
+package course;
 
 /**
  * Created by andrew on 14-3-22.

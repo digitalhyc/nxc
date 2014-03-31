@@ -1,4 +1,6 @@
-package templates;
+package students;
+
+import course.Course;
 
 import java.util.ArrayList;
 import java.util.List;
